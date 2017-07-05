@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+  <TestCase>
+    <first>8</first>
+    <second>15</second>
+    <i>0</i>
+    <j>0</j>
+    <ExpectedResult>9</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <first>8</first>
+    <second>15</second>
+    <i>0</i>
+    <j>0</j>
+    <ExpectedResult>9</ExpectedResult>
+  </TestCase>
+  <TestCase>
+    <first>8</first>
+    <second>15</second>
+    <i>0</i>
+    <j>4</j>
+    <ExpectedResult>15</ExpectedResult>
+  </TestCase>
+</TestCases>

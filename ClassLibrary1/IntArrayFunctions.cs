@@ -8,30 +8,23 @@ namespace ArrayFunctions
 {
     public static class IntArrayFunctions
     {
+        ///<summary>
+        ///Finds the first element in array, 
+        ///for which the sum of right subarray equals
+        ///the sum of left subarray
+        ///</summary>
+        ///<param name="array">
+        ///Any integer array you want
+        /// </param>
+        /// <returns>
+        ///Index of the first element in array, 
+        ///for which the sum of right subarray equals
+        ///the sum of left subarray
+        /// </returns>
         public static int GetSumMedian(int[] array)
         {
-            ///<summary>
-            ///Finds the first element in array, 
-            ///for which the sum of right subarray equals
-            ///the sum of left subarray
-            ///</summary>
-            ///<param name="array">
-            ///Any integer array you want
-            /// </param>
-            /// <returns>
-            ///Index of the first element in array, 
-            ///for which the sum of right subarray equals
-            ///the sum of left subarray
-            /// </returns>
-            if (array == null)
-                return -1;
-            if (array.Length == 0)
-                return -1;
-            long sum = 0;
-            foreach (int x in array)
-                sum += x;
-            long leftSum = 0;
-            long rightSum = sum;
+            CheckArray(array);
+            long sum = GetArraySum(array), leftSum = 0, rightSum = sum;
             int answer = -1;
             for (int i = 0; i < array.Length; i++)
             {
@@ -45,6 +38,19 @@ namespace ArrayFunctions
                 }
             }
             return answer;
+        }
+        private static void CheckArray(int[] a)
+        {
+            if (a == null)
+                throw new ArgumentNullException();
+            if (a.Length == 0)
+                throw new ArgumentException("Empty array");
+        }
+        private static long GetArraySum(int[] a)
+        {
+            long sum = 0;
+            foreach (int x in a) sum += x;
+            return sum;
         }
     }
 }
